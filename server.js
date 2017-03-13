@@ -3,7 +3,7 @@
 
 
 // HTTP Portion
-var https = require('https');
+var http = require('http');
 // URL module
 var url = require('url');
 var path = require('path');
@@ -11,8 +11,8 @@ var path = require('path');
 // Using the filesystem module
 var fs = require('fs');
 
-var server = https.createServer(handleRequest);
-server.listen(443);
+var server = http.createServer(handleRequest);
+server.listen(8080);
 
 console.log('Server started on port 443');
 
