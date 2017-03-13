@@ -10,7 +10,7 @@ function setup() {
   systems = [];
   // Start a socket connection to the server
   // Some day we would run this server somewhere else
-  socket = io.connect('http://185.120.34.174:8080/');
+  socket = io.connect('https://diginick.com');
   // We make a named event called 'mouse' and write an
   // anonymous callback function
   socket.on('mouse',
