@@ -1,16 +1,14 @@
 
 
 // Keep track of our socket connection
-var socket;
+var socket = io();
 var systems;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
   systems = [];
-  // Start a socket connection to the server
-  // Some day we would run this server somewhere else
-  socket = io.connect('http://www.diginick.com');
+
   // We make a named event called 'mouse' and write an
   // anonymous callback function
   socket.on('mouse',

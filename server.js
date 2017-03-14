@@ -11,6 +11,8 @@ var path = require('path');
 // Using the filesystem module
 var fs = require('fs');
 
+var socketIO = require('socket.io');
+
 var server = http.createServer(handleRequest);
 server.listen(8080);
 
@@ -57,13 +59,11 @@ function handleRequest(req, res) {
 
 // WebSocket Portion
 // WebSockets work with the HTTP server
-var io = require('socket.io').listen(server);
+var io = socketIO(server);
 
 // Register a callback function to run when we have an individual connection
 // This is run for each individual user that connects
-io.sockets.on('connection',
-  // We are given a websocket object in our function
-  function (socket) {
+io.on('connection', (socket ) => {
   
     console.log("We have a new client: " + socket.id);
   
